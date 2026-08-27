@@ -1,0 +1,85 @@
+site_name: BHIL-HELM
+site_description: Heuristic Engine for Layered Mockups. Sci-fi design-language dashboards, Claude Code friendly, evidence-tiered, IP-clean.
+site_url: https://polymathwizard.github.io/BHIL-HELM/
+repo_url: https://github.com/PolymathWizard/BHIL-HELM
+repo_name: PolymathWizard/BHIL-HELM
+copyright: Code and schemas MIT. Content CC BY 4.0. Barry Hurd Intelligence Lab.
+docs_dir: docs
+strict: true
+
+theme:
+  name: material
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+
+extra_css:
+  - stylesheets/bhil.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Guide:
+      - Getting started: guide/getting-started.md
+      - Operating principles: guide/operating-principles.md
+      - Commercial architecture: guide/commercial.md
+      - Guardrails: guide/guardrails.md
+  - Prompt system:
+      - Overview: prompts/index.md
+      - Master prompt: prompts/00-master.md
+      - SP-1 Data and Input Deconstruction: prompts/sp-01-data-input-deconstruction.md
+      - SP-2 Narrative Intent Mapping: prompts/sp-02-narrative-intent-mapping.md
+      - SP-3 Style Language Selector: prompts/sp-03-style-language-selector.md
+      - SP-4 Information Architecture: prompts/sp-04-information-architecture-layout-grid.md
+      - SP-5 Component Library Spec: prompts/sp-05-component-library-spec.md
+      - SP-6 Functional Mockup Build: prompts/sp-06-functional-mockup-build.md
+      - SP-7 Interaction and Motion: prompts/sp-07-interaction-motion-layer.md
+      - SP-8 Accessibility and Fidelity QA: prompts/sp-08-accessibility-fidelity-qa.md
+      - SP-9 HELM Snapshot: prompts/sp-09-helm-snapshot.md
+      - SP-10 Terminal Gate: prompts/sp-10-terminal-gate.md
+  - Catalog:
+      - Overview: catalog/index.md
+      - Command-Console: catalog/command-console.md
+      - Tactical HUD: catalog/tactical-hud.md
+      - Industrial Terminal: catalog/industrial-terminal.md
+      - Vector-Wireframe: catalog/vector-wireframe.md
+      - Gestural Holographic: catalog/gestural-holographic.md
+      - Hard-Realism Tactical: catalog/hard-realism-tactical.md
+      - NASA-Utilitarian: catalog/nasa-utilitarian.md
+      - Sonar-Surveillance: catalog/sonar-surveillance.md
+      - Neuro-Medical: catalog/neuro-medical.md
+      - Corporate-Liner: catalog/corporate-liner.md
+      - Tabletop-Motion: catalog/tabletop-motion.md
+      - Neon-Grid: catalog/neon-grid.md
+      - Monochrome-Blueprint: catalog/monochrome-blueprint.md
+      - Diegetic Wearable: catalog/diegetic-wearable.md
+      - Retro-Forward: catalog/retro-forward.md
+  - Reference:
+      - Narrative Tax Register: reference/narrative-tax.md
+      - Evidence tiers: reference/evidence-tiers.md
+      - Matching logic: reference/matching-logic.md
+      - Zones and components: reference/components.md
+      - Lineage register: reference/lineage-register.md
+      - Visual reference pack: research/reference-pack.md
+  - Claude Code:
+      - Integration: claude-code/index.md
+      - Standing commands: claude-code/commands.md
+  - Support:
+      - FAQ: support/faq.md
+      - Troubleshooting: support/troubleshooting.md
