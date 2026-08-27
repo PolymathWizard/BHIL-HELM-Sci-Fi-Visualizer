@@ -16,7 +16,7 @@ What ships:
 
 Nothing in it is recognizable as a specific franchise screen. The test suite greps for property names and fails the build if one appears.
 
-Repo: github.com/PolymathWizard/BHIL-HELM
+Repo: github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
 
 Human-Directed. AI-Enabled. Commercially Tested.
 
@@ -34,7 +34,7 @@ The door-opener is a HELM Snapshot: one file, one screen, one design language, a
 
 If your team has data and no decision surface, I would like to see the file.
 
-github.com/PolymathWizard/BHIL-HELM
+github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
 
 Human-Directed. AI-Enabled. Commercially Tested.
 
@@ -53,6 +53,6 @@ Sci-fi design-language dashboards, Claude Code native, built the way the rest of
 
 MIT for code and tokens, CC BY 4.0 for prose. Fork it, restyle it, tell me what breaks.
 
-github.com/PolymathWizard/BHIL-HELM
+github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
 
 Human-Directed. AI-Enabled. Commercially Tested.

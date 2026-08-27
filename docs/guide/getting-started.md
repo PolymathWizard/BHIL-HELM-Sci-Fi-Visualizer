@@ -11,8 +11,8 @@ No package installs are required to run the validators or the starter dashboard.
 ## Five-minute tour
 
 ```
-git clone https://github.com/PolymathWizard/BHIL-HELM
-cd BHIL-HELM
+git clone https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
+cd BHIL-HELM-Sci-Fi-Visualizer
 python3 tools/validate.py          # canonical data passes its laws
 python3 tools/contrast.py tactical-hud
 open examples/helm-starter/dashboard.html

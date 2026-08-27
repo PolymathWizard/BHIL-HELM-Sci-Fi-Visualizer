@@ -1,0 +1,85 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 814' width='1400' height='814'>
+<rect width='1400' height='814' fill='#1C1C2E'/>
+<text x='40' y='52' fill='#FFFFFF' font-size='30' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Use cases: what the data looks like decides the language</text>
+<text x='40' y='84' fill='#B8BFD6' font-size='16' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Eleven matching rules from data/canonical/matching.json. First fit is bound; the alternate is offered when the reader or setting argues against it.</text>
+<rect x='30' y='110' width='1340' height='36' fill='#0F2F8A' rx='4'/>
+<text x='40' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Rule</text>
+<text x='110' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Data shape</text>
+<text x='330' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Reader and setting</text>
+<text x='640' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>First fit</text>
+<text x='860' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Alternate</text>
+<text x='1070' y='134' fill='#FFFFFF' font-size='14' font-weight='700' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Why</text>
+<rect x='30' y='150' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='182' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M01</text>
+<text x='110' y='182' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>status-grid</text>
+<text x='330' y='182' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Many systems, calm monitoring</text>
+<rect x='640' y='162' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='182' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>command-console</text>
+<rect x='860' y='162' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='182' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>nasa-utilitarian</text>
+<text x='1070' y='182' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Color-blocked zones and elbow frames group systems...</text>
+<text x='40' y='236' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M02</text>
+<text x='110' y='236' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>telemetry</text>
+<text x='330' y='236' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Real-time, few critical numbers</text>
+<rect x='640' y='216' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='236' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>tactical-hud</text>
+<rect x='860' y='216' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='236' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>hard-realism-tactical</text>
+<text x='1070' y='236' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Reticle focus and ring gauges pull the eye to the ...</text>
+<rect x='30' y='258' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='290' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M03</text>
+<text x='110' y='290' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>text-heavy</text>
+<text x='330' y='290' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Logs, events, audit trails</text>
+<rect x='640' y='270' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='290' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>industrial-terminal</text>
+<rect x='860' y='270' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='290' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>sonar-surveillance</text>
+<text x='1070' y='290' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Monospace grids and phosphor contrast make dense t...</text>
+<text x='40' y='344' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M04</text>
+<text x='110' y='344' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>relationship-graph</text>
+<text x='330' y='344' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Investigation, drill-down</text>
+<rect x='640' y='324' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='344' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>gestural-holographic</text>
+<rect x='860' y='324' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='344' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>neuro-medical</text>
+<text x='1070' y='344' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Layered translucent panes model entering a dataset</text>
+<rect x='30' y='366' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='398' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M05</text>
+<text x='110' y='398' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>threat-network</text>
+<text x='330' y='398' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Security, anomaly, network</text>
+<rect x='640' y='378' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='398' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>sonar-surveillance</text>
+<rect x='860' y='378' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='398' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>industrial-terminal</text>
+<text x='1070' y='398' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Point-cloud and monochrome restraint read as vigil...</text>
+<text x='40' y='452' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M06</text>
+<text x='110' y='452' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>multi-unit</text>
+<text x='330' y='452' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Operations across factions or units</text>
+<rect x='640' y='432' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='452' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>hard-realism-tactical</text>
+<rect x='860' y='432' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='452' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>command-console</text>
+<text x='1070' y='452' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Per-unit color coding with a shared grammar</text>
+<rect x='30' y='474' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='506' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M07</text>
+<text x='110' y='506' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>clinical</text>
+<text x='330' y='506' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Anatomical, quality, precision, regulated</text>
+<rect x='640' y='486' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='506' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>neuro-medical</text>
+<rect x='860' y='486' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='506' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>nasa-utilitarian</text>
+<text x='1070' y='506' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Science-fact restraint builds trust in numbers</text>
+<text x='40' y='560' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M08</text>
+<text x='110' y='560' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>public-facing</text>
+<text x='330' y='560' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Consumer, wayfinding, onboarding</text>
+<rect x='640' y='540' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='560' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>corporate-liner</text>
+<rect x='860' y='540' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='560' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>command-console</text>
+<text x='1070' y='560' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Warm, branded, high-affordance</text>
+<rect x='30' y='582' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='614' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M09</text>
+<text x='110' y='614' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>long-time-series</text>
+<text x='330' y='614' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Retro, archival, heritage</text>
+<rect x='640' y='594' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='614' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>vector-wireframe</text>
+<rect x='860' y='594' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='614' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>industrial-terminal</text>
+<text x='1070' y='614' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Line-art austerity suits long horizons</text>
+<text x='40' y='668' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M10</text>
+<text x='110' y='668' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>evidence-board</text>
+<text x='330' y='668' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Collaborative review, deal rooms</text>
+<rect x='640' y='648' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='668' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>tabletop-motion</text>
+<rect x='860' y='648' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='668' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>gestural-holographic</text>
+<text x='1070' y='668' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Object-like cards and elastic motion suit multi-us...</text>
+<rect x='30' y='690' width='1340' height='54' fill='#232340' rx='3'/>
+<text x='40' y='722' fill='#6B9EFF' font-size='14' font-weight='700' font-family='IBM Plex Mono, Consolas, monospace'>M11</text>
+<text x='110' y='722' fill='#FFFFFF' font-size='15' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>entertainment</text>
+<text x='330' y='722' fill='#B8BFD6' font-size='14' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Cyber-noir, nightlife, gaming</text>
+<rect x='640' y='702' width='200' height='30' fill='#1B4FD8' rx='15'/><text x='740' y='722' fill='#FFFFFF' font-size='13' font-weight='700' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>neon-grid</text>
+<rect x='860' y='702' width='190' height='30' fill='none' stroke='#6B9EFF' stroke-width='1.5' rx='15'/><text x='955' y='722' fill='#6B9EFF' font-size='13' text-anchor='middle' font-family='IBM Plex Mono, Consolas, monospace'>corporate-liner</text>
+<text x='1070' y='722' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Glow-on-void carries energy; use sparingly for bus...</text>
+<text x='40' y='786' fill='#B8BFD6' font-size='13' font-family='IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif'>Override only: monochrome-blueprint, diegetic-wearable, retro-forward. Never auto-selected; the client chooses them on purpose.</text>
+</svg>

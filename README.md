@@ -4,8 +4,8 @@
 
 **Heuristic Engine for Layered Mockups.** Turn client data into eye-catching, functional, Claude Code friendly interactive dashboards styled in science-fiction design languages. Evidence-tiered. IP-clean. Regenerable.
 
-[![quality-gate](https://github.com/PolymathWizard/BHIL-HELM/actions/workflows/quality-gate.yml/badge.svg)](https://github.com/PolymathWizard/BHIL-HELM/actions/workflows/quality-gate.yml)
-[![docs](https://img.shields.io/badge/docs-GitHub%20Pages-1B4FD8)](https://polymathwizard.github.io/BHIL-HELM/)
+[![quality-gate](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml/badge.svg)](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml)
+[![docs](https://img.shields.io/badge/docs-GitHub%20Pages-1B4FD8)](https://polymathwizard.github.io/BHIL-HELM-Sci-Fi-Visualizer/)
 [![license](https://img.shields.io/badge/code-MIT-0F2F8A)](LICENSE) [![content](https://img.shields.io/badge/content-CC%20BY%204.0-6B9EFF)](LICENSE-CONTENT)
 
 Read [ABOUT.md](ABOUT.md) for the full story of the framework, or open the [visual reference pack](research/reference-pack/README.md) that the catalog was distilled from.
@@ -32,8 +32,8 @@ Fictional user interfaces are the most effective communication design under time
 ## Quick start
 
 ```bash
-git clone https://github.com/PolymathWizard/BHIL-HELM
-cd BHIL-HELM
+git clone https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
+cd BHIL-HELM-Sci-Fi-Visualizer
 python3 tools/validate.py                      # PASS: 15 languages, 12 tropes, 5 tiers, 11 rules, 14 components
 python3 tools/contrast.py tactical-hud         # WCAG matrix for one language
 open examples/helm-starter/dashboard.html      # no build step, no server
@@ -90,7 +90,7 @@ Snapshot (one screen, two-page readout, the door-opener) · Core Build (full bri
 ## Repository layout
 
 ```
-BHIL-HELM/
+BHIL-HELM-Sci-Fi-Visualizer/
 ├── CLAUDE.md                   standing brief for any Claude Code session
 ├── prompts/                    00-master + sp-01 .. sp-10
 ├── data/canonical/             catalog, tropes, evidence tiers, matching, components, lineage register
@@ -106,8 +106,13 @@ BHIL-HELM/
 ├── docs/                       MkDocs site (derived pages generated)
 ├── launch/                     GitHub description options and LinkedIn posts
 ├── ABOUT.md                    what HELM is, why, and how it runs
+├── DISCLAIMER.md               third-party material, intended use, no warranty
 └── engagements/                gitignored client work (.gitkeep only)
 ```
+
+## Disclaimer
+
+All film, television, and game titles, studio and designer names, and the study images in `research/reference-pack/` are the property of their respective license holders and appear here for design study and lineage attribution only. This repository is solely for development, research, and innovation use. See [DISCLAIMER.md](DISCLAIMER.md).
 
 ## Conventions
 

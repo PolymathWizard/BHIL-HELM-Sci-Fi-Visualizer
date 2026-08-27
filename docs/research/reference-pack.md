@@ -4,7 +4,7 @@
 
 The study board the HELM catalog was distilled from. It lives in `research/reference-pack/` and is not read by any validator or copied into any deliverable. Fifteen languages, 43 sourced visuals, 47 named examples, every image traced to a source page in a fixed order of preference: studio or designer portfolio, named designer interview, specialist archive, then film still.
 
-Open the catalog: [PDF](https://github.com/PolymathWizard/BHIL-HELM/blob/main/research/reference-pack/HELM_SciFi_Dashboard_Visual_Catalog.pdf) (26 pages, 133 clickable links) or [self-contained HTML](https://github.com/PolymathWizard/BHIL-HELM/blob/main/research/reference-pack/HELM_SciFi_Dashboard_Visual_Catalog.html).
+Open the catalog: [PDF](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/blob/main/research/reference-pack/HELM_SciFi_Dashboard_Visual_Catalog.pdf) (26 pages, 133 clickable links) or [self-contained HTML](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/blob/main/research/reference-pack/HELM_SciFi_Dashboard_Visual_Catalog.html).
 
 ## Style map
 

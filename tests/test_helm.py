@@ -162,3 +162,12 @@ def test_reference_pack_is_quarantined_with_rights_note():
     for d in ("examples", "templates", "tokens", "docs/assets"):
         for p in (ROOT / d).rglob("*"):
             assert p.name not in names, f"reference-pack image shipped in {p}"
+
+
+def test_disclaimer_present_and_linked():
+    """Bug prevented: shipping third-party study material without the intended-use and rights statement."""
+    d = (ROOT / "DISCLAIMER.md").read_text()
+    assert "property of their respective license holders" in d
+    assert "solely for development, research, and innovation use" in d
+    assert "DISCLAIMER.md" in (ROOT / "README.md").read_text()
+    assert (ROOT / "docs/disclaimer.md").read_text() == d

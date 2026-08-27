@@ -1,8 +1,8 @@
 site_name: BHIL-HELM
 site_description: Heuristic Engine for Layered Mockups. Sci-fi design-language dashboards, Claude Code friendly, evidence-tiered, IP-clean.
-site_url: https://polymathwizard.github.io/BHIL-HELM/
-repo_url: https://github.com/PolymathWizard/BHIL-HELM
-repo_name: PolymathWizard/BHIL-HELM
+site_url: https://polymathwizard.github.io/BHIL-HELM-Sci-Fi-Visualizer/
+repo_url: https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
+repo_name: PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer
 copyright: Code and schemas MIT. Content CC BY 4.0. Barry Hurd Intelligence Lab.
 docs_dir: docs
 strict: true
@@ -35,6 +35,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
+  - Disclaimer: disclaimer.md
   - Guide:
       - Getting started: guide/getting-started.md
       - Operating principles: guide/operating-principles.md
