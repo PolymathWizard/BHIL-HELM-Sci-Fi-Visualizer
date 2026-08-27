@@ -35,6 +35,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
+  - Sample library: samples.md
   - Disclaimer: disclaimer.md
   - Guide:
       - Getting started: guide/getting-started.md

@@ -4,7 +4,8 @@
 
 **Heuristic Engine for Layered Mockups.** Turn client data into eye-catching, functional, Claude Code friendly interactive dashboards styled in science-fiction design languages. Evidence-tiered. IP-clean. Regenerable.
 
-
+[![quality-gate](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml/badge.svg)](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml)
+[![docs](https://img.shields.io/badge/docs-GitHub%20Pages-1B4FD8)](https://polymathwizard.github.io/BHIL-HELM-Sci-Fi-Visualizer/)
 [![license](https://img.shields.io/badge/code-MIT-0F2F8A)](LICENSE) [![content](https://img.shields.io/badge/content-CC%20BY%204.0-6B9EFF)](LICENSE-CONTENT)
 
 Read [ABOUT.md](ABOUT.md) for the full story of the framework, or open the [visual reference pack](research/reference-pack/README.md) that the catalog was distilled from.
@@ -14,6 +15,18 @@ Fictional user interfaces are the most effective communication design under time
 ![HELM starter: Tactical HUD language on labeled synthetic data](docs/assets/helm-starter.png)
 
 *The starter build. Tactical HUD language, wall-display density, SYNTHETIC badge, evidence labels on the STATED target and the INFERENCE metric, shape-coded status rail, decorative ambient stream. Rendered without the CDN to show the inline fallback.*
+
+## Sample dashboard library
+
+These ten panels are BHIL concept renders: launch imagery that shows the target fidelity HELM aims at, not builds produced by the pipeline. Each is annotated with the data shape it represents, the matching rule that would fire, and the decision question a HELM build of it would have to answer. Any brand marks, platform names, and faces inside the renders are illustrative placeholders. Full-resolution PNGs are in `assets/samples/`.
+
+<table>
+<tr><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-01-audience-funnel-seo.jpg" alt="Audience Funnel and SEO Intelligence"><br><b>Audience Funnel and SEO Intelligence</b><br><sub>Unify audience behavior and search performance into one growth read.<br>Data shape: <code>status-grid</code> · Rule M01 binds <code>command-console</code><br>Decision: Which content cluster gets the next month of effort?</sub></td><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-02-social-network-influence-graph.jpg" alt="Social Network and Influence Graph"><br><b>Social Network and Influence Graph</b><br><sub>Map communities, bridges, and cascade paths across a 64K-node network.<br>Data shape: <code>relationship-graph</code> · Rule M04 binds <code>gestural-holographic</code><br>Decision: Which bridge nodes move a narrative between communities?</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-03-due-diligence-risk.jpg" alt="Due Diligence and Risk Intelligence"><br><b>Due Diligence and Risk Intelligence</b><br><sub>Target overview, risk heat map, governance, red flags, data-room progress.<br>Data shape: <code>evidence-board</code> · Rule M10 binds <code>tabletop-motion</code><br>Decision: Does the deal proceed to the next review stage?</sub></td><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-04-ai-research-swarm-operations.jpg" alt="AI Research Swarm Operations Center"><br><b>AI Research Swarm Operations Center</b><br><sub>Agent roles, workflow stage, evidence tiers, confidence, and a decision gate.<br>Data shape: <code>status-grid</code> · Rule M01 binds <code>command-console</code><br>Decision: Approve, request more data, or escalate the recommendation?</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-05-influencer-narrative-map.jpg" alt="Influencer Analysis and Narrative Map"><br><b>Influencer Analysis and Narrative Map</b><br><sub>Reach, influence tiers, narrative clusters, amplification paths, sentiment.<br>Data shape: <code>relationship-graph</code> · Rule M04 binds <code>gestural-holographic</code><br>Decision: Which narrative is accelerating and who is amplifying it?</sub></td><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-06-competitive-intelligence-war-room.jpg" alt="Competitive Intelligence War Room"><br><b>Competitive Intelligence War Room</b><br><sub>Competitor snapshot, market motion, feature benchmark, pricing shift, signal radar.<br>Data shape: <code>multi-unit</code> · Rule M06 binds <code>hard-realism-tactical</code><br>Decision: Which competitor move requires a response this week?</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-07-partner-ecosystem-intelligence.jpg" alt="Partner Ecosystem Intelligence"><br><b>Partner Ecosystem Intelligence</b><br><sub>Deal flow, relationship strength, dependency map, ecosystem opportunities.<br>Data shape: <code>evidence-board</code> · Rule M10 binds <code>tabletop-motion</code><br>Decision: Which partnership opportunity gets pursued this quarter?</sub></td><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-08-osint-command-center.jpg" alt="OSINT Command Center"><br><b>OSINT Command Center</b><br><sub>Signal intake, source credibility, geo activity, entity resolution, timeline.<br>Data shape: <code>threat-network</code> · Rule M05 binds <code>sonar-surveillance</code><br>Decision: Which priority signal needs analyst attention now?</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-09-counterintelligence-network-monitor.jpg" alt="Counterintelligence Network Monitor"><br><b>Counterintelligence Network Monitor</b><br><sub>Threat posture, network graph, alias matrix, travel routes, exposure.<br>Data shape: <code>threat-network</code> · Rule M05 binds <code>sonar-surveillance</code><br>Decision: Which target network carries the highest risk score today?</sub></td><td width="50%" valign="top"><img src="docs/assets/samples/BHIL-sample-dashboard-10-talent-intelligence-command-surface.jpg" alt="Talent Intelligence Command Surface"><br><b>Talent Intelligence Command Surface</b><br><sub>Hiring velocity, skill clusters, role demand, compensation bands, geography.<br>Data shape: <code>status-grid</code> · Rule M01 binds <code>command-console</code><br>Decision: Where is the labor market moving against the hiring plan?</sub></td></tr>
+</table>
 
 ## What is in the box
 
@@ -98,6 +111,7 @@ BHIL-HELM-Sci-Fi-Visualizer/
 ├── templates/                  artifact, CLAUDE.md, REGENERATE.md, client SKILL.md
 ├── examples/helm-starter/      complete starter build
 ├── assets/hero/                launch imagery (BHIL originals, full resolution)
+├── assets/samples/             ten sample dashboard concept renders (full resolution)
 ├── research/reference-pack/    study board: 43 sourced visuals, coverage ledger, catalog PDF/HTML
 ├── .claude/                    agents, commands, skills, settings
 ├── tools/                      validators and builders (stdlib only)
