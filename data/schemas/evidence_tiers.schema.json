@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence_tiers.schema.json",
+  "title": "HELM Evidence Tiers",
+  "type": "object",
+  "required": [
+    "framework",
+    "count_law",
+    "tiers"
+  ],
+  "properties": {
+    "count_law": {
+      "const": 5
+    },
+    "tiers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "rank",
+          "tier",
+          "definition",
+          "helm_application",
+          "on_screen_label_required"
+        ],
+        "properties": {
+          "tier": {
+            "enum": [
+              "VERIFIED",
+              "CORROBORATED",
+              "UNCORROBORATED",
+              "INFERENCE",
+              "STATED"
+            ]
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+      }
+    }
+  }
+}

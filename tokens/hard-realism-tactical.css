@@ -1,0 +1,41 @@
+/* HELM token set: Hard-Realism Tactical (L06). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "hard-realism-tactical";
+  /* background layers */
+  --bg-void: #0B0D10;
+  --bg-panel: #14181E;
+  --bg-panel-raised: #1C222A;
+  /* text */
+  --text-primary: #EEF1F4;
+  --text-secondary: #AEB7C2;
+  --text-muted: #6F7A87;
+  /* accent */
+  --accent-primary: #5FB4E5;
+  --accent-secondary: #E0A44A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #6FCF97;
+  --state-caution: #E0A44A;
+  --state-critical: #E5605F;
+  --state-offline: #4B535D;
+  /* structure */
+  --border: #2C343E;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 4px;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 500ms;
+  --motion-arrival: 250ms;
+  --motion-ease: cubic-bezier(.4,0,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

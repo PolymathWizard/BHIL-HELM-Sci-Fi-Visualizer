@@ -1,0 +1,41 @@
+/* HELM token set: Neuro-Medical (L09). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "neuro-medical";
+  /* background layers */
+  --bg-void: #0E1420;
+  --bg-panel: #F7FAFF;
+  --bg-panel-raised: #FFFFFF;
+  /* text */
+  --text-primary: #0F1B2D;
+  --text-secondary: #3E4F68;
+  --text-muted: #6E7E95;
+  /* accent */
+  --accent-primary: #1F6FE5;
+  --accent-secondary: #19A3A3;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #1F8A5B;
+  --state-caution: #B9770E;
+  --state-critical: #C0392B;
+  --state-offline: #8A95A5;
+  /* structure */
+  --border: #D4DEEC;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 4px;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 300ms;
+  --motion-arrival: 300ms;
+  --motion-ease: cubic-bezier(.4,0,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

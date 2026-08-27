@@ -1,0 +1,33 @@
+{
+  "engagement": "Northline Fulfillment Network (starter example)",
+  "ref": "HELM-STARTER-001",
+  "generated": "2026-08-27",
+  "data_shape": "telemetry",
+  "synthetic": true,
+  "synthetic_assumptions": [
+    "A regional fulfillment network with five hubs and one daily on-time metric.",
+    "On-time rate is the decision metric; the client target of 95 percent is STATED.",
+    "Dock wait is derived from gate scans and is therefore INFERENCE.",
+    "Thresholds (caution below 93 percent, critical below 90 percent) were chosen for the example."
+  ],
+  "fields": [
+    {"name": "on_time_rate", "type": "number", "units": "ratio", "null_rate": 0.0, "source": "synthetic WMS extract", "quality": "clean", "role": "kpi", "zone": "prime", "evidence": "VERIFIED"},
+    {"name": "on_time_target", "type": "number", "units": "ratio", "null_rate": 0.0, "source": "client target", "quality": "clean", "role": "context", "zone": "prime", "evidence": "STATED"},
+    {"name": "on_time_rate_daily", "type": "number", "units": "ratio", "null_rate": 0.0, "source": "synthetic WMS extract", "quality": "clean", "role": "context", "zone": "context", "evidence": "VERIFIED"},
+    {"name": "orders_in_flight", "type": "integer", "units": "orders", "null_rate": 0.0, "source": "synthetic WMS extract", "quality": "clean", "role": "kpi", "zone": "support", "evidence": "VERIFIED"},
+    {"name": "carrier_capacity", "type": "number", "units": "ratio", "null_rate": 0.0, "source": "synthetic carrier API", "quality": "clean", "role": "kpi", "zone": "support", "evidence": "VERIFIED"},
+    {"name": "avg_dock_wait", "type": "number", "units": "minutes", "null_rate": 0.0, "source": "derived from gate scans", "quality": "degraded", "role": "kpi", "zone": "support", "evidence": "INFERENCE"},
+    {"name": "exceptions_open", "type": "integer", "units": "count", "null_rate": 0.0, "source": "synthetic exception queue", "quality": "clean", "role": "kpi", "zone": "support", "evidence": "VERIFIED"},
+    {"name": "hub_state", "type": "enum", "null_rate": 0.0, "source": "synthetic hub monitor", "quality": "clean", "role": "dimension", "zone": "status_rail", "evidence": "VERIFIED"},
+    {"name": "ambient", "type": "string", "null_rate": 0.0, "source": "generated atmosphere", "quality": "clean", "role": "not-shown", "zone": "stream", "evidence": "INFERENCE"}
+  ],
+  "headlines": [
+    {"field": "on_time_rate", "rank": 1, "why": "The reallocation decision hinges on it"},
+    {"field": "carrier_capacity", "rank": 2, "why": "Constrains what reallocation is possible"},
+    {"field": "exceptions_open", "rank": 3, "why": "Leading indicator of tomorrow's on-time rate"}
+  ],
+  "quality_flags": [
+    {"flag": "ambient field quality is cosmetic; it is decorative-only by design", "severity": "cosmetic"},
+    {"flag": "avg_dock_wait is derived; labeled INFERENCE on screen", "severity": "degrades"}
+  ]
+}

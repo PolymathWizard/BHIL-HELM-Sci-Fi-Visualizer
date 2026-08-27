@@ -1,0 +1,41 @@
+/* HELM token set: Vector-Wireframe (L04). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "vector-wireframe";
+  /* background layers */
+  --bg-void: #000000;
+  --bg-panel: #000000;
+  --bg-panel-raised: #030603;
+  /* text */
+  --text-primary: #7DFF9A;
+  --text-secondary: #4FBF6A;
+  --text-muted: #2A6B3A;
+  /* accent */
+  --accent-primary: #7DFF9A;
+  --accent-secondary: #FFA24A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #7DFF9A;
+  --state-caution: #FFA24A;
+  --state-critical: #FF6A4A;
+  --state-offline: #2A2A2A;
+  /* structure */
+  --border: #3FBF5A;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Orbitron", system-ui, sans-serif;
+  --font-body: "Share Tech Mono", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1000ms;
+  --motion-arrival: 400ms;
+  --motion-ease: linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

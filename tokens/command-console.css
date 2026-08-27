@@ -1,0 +1,41 @@
+/* HELM token set: Command-Console (L01). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "command-console";
+  /* background layers */
+  --bg-void: #050509;
+  --bg-panel: #101018;
+  --bg-panel-raised: #181826;
+  /* text */
+  --text-primary: #F2F0FF;
+  --text-secondary: #B9B4D6;
+  --text-muted: #7E7A99;
+  /* accent */
+  --accent-primary: #9C8CFF;
+  --accent-secondary: #FFB27A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #7FC8FF;
+  --state-caution: #FFB27A;
+  --state-critical: #FF7A7A;
+  --state-offline: #5C5A6E;
+  /* structure */
+  --border: #2B2B3C;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 22px 0 0 22px;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Antonio", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 600ms;
+  --motion-arrival: 200ms;
+  --motion-ease: steps(1, end);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

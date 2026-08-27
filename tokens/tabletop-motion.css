@@ -1,0 +1,41 @@
+/* HELM token set: Tabletop-Motion (L11). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "tabletop-motion";
+  /* background layers */
+  --bg-void: #121214;
+  --bg-panel: #1C1C20;
+  --bg-panel-raised: #26262C;
+  /* text */
+  --text-primary: #F4F4F2;
+  --text-secondary: #BDBDB8;
+  --text-muted: #7C7C78;
+  /* accent */
+  --accent-primary: #FF6A3D;
+  --accent-secondary: #3DDC97;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #3DDC97;
+  --state-caution: #FFC53D;
+  --state-critical: #FF3D5A;
+  --state-offline: #4A4A50;
+  /* structure */
+  --border: #34343A;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 4px;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 700ms;
+  --motion-arrival: 400ms;
+  --motion-ease: cubic-bezier(.34,1.56,.64,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

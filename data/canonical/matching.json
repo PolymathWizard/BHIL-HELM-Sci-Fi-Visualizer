@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/matching.schema.json",
+  "framework": "HELM",
+  "version": "1.0.0",
+  "count_law": 11,
+  "note": "SP-3 matching logic. Data shape plus reader plus decision resolves to a first-fit language and one alternate. Every fit rationale is INFERENCE.",
+  "rules": [
+    {"id": "M01", "data_shape": "status-grid", "reader_hint": "Many systems, calm monitoring", "first_fit": "command-console", "alternate": "nasa-utilitarian", "why": "Color-blocked zones and elbow frames group systems without legends"},
+    {"id": "M02", "data_shape": "telemetry", "reader_hint": "Real-time, few critical numbers", "first_fit": "tactical-hud", "alternate": "hard-realism-tactical", "why": "Reticle focus and ring gauges pull the eye to the one number that matters"},
+    {"id": "M03", "data_shape": "text-heavy", "reader_hint": "Logs, events, audit trails", "first_fit": "industrial-terminal", "alternate": "sonar-surveillance", "why": "Monospace grids and phosphor contrast make dense text scannable"},
+    {"id": "M04", "data_shape": "relationship-graph", "reader_hint": "Investigation, drill-down", "first_fit": "gestural-holographic", "alternate": "neuro-medical", "why": "Layered translucent panes model entering a dataset"},
+    {"id": "M05", "data_shape": "threat-network", "reader_hint": "Security, anomaly, network", "first_fit": "sonar-surveillance", "alternate": "industrial-terminal", "why": "Point-cloud and monochrome restraint read as vigilance"},
+    {"id": "M06", "data_shape": "multi-unit", "reader_hint": "Operations across factions or units", "first_fit": "hard-realism-tactical", "alternate": "command-console", "why": "Per-unit color coding with a shared grammar"},
+    {"id": "M07", "data_shape": "clinical", "reader_hint": "Anatomical, quality, precision, regulated", "first_fit": "neuro-medical", "alternate": "nasa-utilitarian", "why": "Science-fact restraint builds trust in numbers"},
+    {"id": "M08", "data_shape": "public-facing", "reader_hint": "Consumer, wayfinding, onboarding", "first_fit": "corporate-liner", "alternate": "command-console", "why": "Warm, branded, high-affordance"},
+    {"id": "M09", "data_shape": "long-time-series", "reader_hint": "Retro, archival, heritage", "first_fit": "vector-wireframe", "alternate": "industrial-terminal", "why": "Line-art austerity suits long horizons"},
+    {"id": "M10", "data_shape": "evidence-board", "reader_hint": "Collaborative review, deal rooms", "first_fit": "tabletop-motion", "alternate": "gestural-holographic", "why": "Object-like cards and elastic motion suit multi-user review"},
+    {"id": "M11", "data_shape": "entertainment", "reader_hint": "Cyber-noir, nightlife, gaming", "first_fit": "neon-grid", "alternate": "corporate-liner", "why": "Glow-on-void carries energy; use sparingly for business data"}
+  ],
+  "unmatched_languages_note": "monochrome-blueprint, diegetic-wearable, and retro-forward are selected by explicit style intent or as SP-3 analyst overrides, not by data-shape first-fit."
+}

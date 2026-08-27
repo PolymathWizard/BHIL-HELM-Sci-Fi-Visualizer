@@ -1,0 +1,16 @@
+# Regeneration prompt
+
+Paste into Claude Code from this directory to rebuild `dashboard.html` from the register and tokens.
+
+```
+Rebuild dashboard.html as a single-file HTML artifact.
+Language: {{LANGUAGE_SLUG}}. Link tokens/{{LANGUAGE_SLUG}}.css. Use only CSS custom properties from that file for color, type, radius, glow, and motion.
+Reader: {{READER}} on {{SETTING}}, {{SECONDS}} seconds. Purpose sentence: the screen exists so that {{READER}} can {{DECISION}}.
+Data: embed data/source.json as the constant HELM_DATA. Bind every rendered number with data-field and data-evidence attributes matching data/register.json. Render the evidence label inside any component whose tier is STATED, INFERENCE, or UNCORROBORATED.
+Zones: {{ZONE_SPEC}}
+One renderState(state) function re-renders everything.
+Motion: boot sequence at or below --motion-boot, skippable, off under prefers-reduced-motion; arrivals at --motion-arrival; critical state changes immediate.
+Dependencies: Chart.js 4.4.1 from cdnjs, pinned. Inline SVG fallback if Chart is undefined, with a console warning. No localStorage or sessionStorage. No other external calls.
+Accessibility: visible focus states, keyboard reachable controls, escape clears focus, aria labels on zones.
+Data mode {{DATA_MODE}}: if SYNTHETIC, the header shows a SYNTHETIC DATA badge.
+```

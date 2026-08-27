@@ -1,0 +1,22 @@
+---
+name: helm-dashboard
+description: Maintain the {{CLIENT}} HELM-built dashboard. Use when asked to restyle to another language, add a panel for a field, rebind to a new data file, or re-run contrast and fidelity checks on dashboard.html.
+---
+
+# helm-dashboard (client skill)
+
+This dashboard was built with HELM (Barry Hurd Intelligence Lab). Read `CLAUDE.md` first.
+
+## Commands
+
+- **restyle `<language>`**: swap `tokens/<language>.css`, keep every `data-field` binding, apply the new language's hierarchy device to zone frames, re-run contrast on every text/background pair, report any pair below 4.5:1 (body) or 3:1 (large text and UI). Available languages: command-console, tactical-hud, industrial-terminal, vector-wireframe, gestural-holographic, hard-realism-tactical, nasa-utilitarian, sonar-surveillance, neuro-medical, corporate-liner, tabletop-motion, neon-grid, monochrome-blueprint, diegetic-wearable, retro-forward.
+- **add-panel `<zone>` `<field>`**: confirm the field exists in `data/register.json` with an evidence class, check the zone density budget in `CLAUDE.md`, insert the component at the next priority, bind with `data-field` and `data-evidence`, render the label if the tier requires it. If the budget is exceeded, propose which object to demote and stop.
+- **rebind `<file>`**: replace the data constant, preserve every zone and component, list fields that no longer exist and new fields with no panel, spot-check ten values.
+
+## Rules
+
+- Original design language only. No franchise names, logos, glyph systems, or licensed or fan-recreation fonts.
+- Every number has a register field and an evidence class.
+- Ambient elements stay in Stream and carry `data-decorative="true"`.
+- No browser storage. cdnjs only, pinned.
+- Log findings; never fix silently.

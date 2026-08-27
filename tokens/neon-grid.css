@@ -1,0 +1,41 @@
+/* HELM token set: Neon-Grid (L12). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "neon-grid";
+  /* background layers */
+  --bg-void: #05030A;
+  --bg-panel: #0B0715;
+  --bg-panel-raised: #120B21;
+  /* text */
+  --text-primary: #F3EAFF;
+  --text-secondary: #C3A9F0;
+  --text-muted: #7A639E;
+  /* accent */
+  --accent-primary: #3DF2FF;
+  --accent-secondary: #FF3DD8;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #3DF2FF;
+  --state-caution: #FFE83D;
+  --state-critical: #FF3D6E;
+  --state-offline: #3A2F52;
+  /* structure */
+  --border: #2E1F4A;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: 0 0 18px color-mix(in srgb, #3DF2FF 55%, transparent);
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Audiowide", system-ui, sans-serif;
+  --font-body: "Rajdhani", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1000ms;
+  --motion-arrival: 300ms;
+  --motion-ease: cubic-bezier(.2,.8,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

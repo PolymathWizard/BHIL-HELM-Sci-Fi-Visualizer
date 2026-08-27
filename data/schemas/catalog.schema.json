@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "catalog.schema.json",
+  "title": "HELM Catalog",
+  "type": "object",
+  "required": [
+    "framework",
+    "version",
+    "count_law",
+    "languages",
+    "overlays"
+  ],
+  "properties": {
+    "framework": {
+      "const": "HELM"
+    },
+    "version": {
+      "type": "string"
+    },
+    "count_law": {
+      "const": 15
+    },
+    "note": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "lineage_study_only",
+          "lineage_decade",
+          "taxonomy",
+          "palette_logic",
+          "type_stack",
+          "type_fonts",
+          "hierarchy_device",
+          "motion_grammar",
+          "sound_cue",
+          "native_strength",
+          "native_weakness",
+          "radius",
+          "glow",
+          "tokens",
+          "swatches",
+          "motion"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^L(0[1-9]|1[0-5])$"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lineage_study_only": {
+            "type": "string"
+          },
+          "lineage_decade": {
+            "enum": [
+              "1960s",
+              "1970s",
+              "1980s",
+              "1990s",
+              "2000s",
+              "2010s",
+              "2020s"
+            ]
+          },
+          "taxonomy": {
+            "enum": [
+              "command-control",
+              "hud-ar",
+              "investigation",
+              "public-access"
+            ]
+          },
+          "palette_logic": {
+            "type": "string"
+          },
+          "type_stack": {
+            "type": "string"
+          },
+          "type_fonts": {
+            "type": "object",
+            "required": [
+              "display",
+              "body",
+              "mono"
+            ],
+            "properties": {
+              "display": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "mono": {
+                "type": "string"
+              }
+            }
+          },
+          "hierarchy_device": {
+            "type": "string"
+          },
+          "motion_grammar": {
+            "type": "string"
+          },
+          "sound_cue": {
+            "type": "string"
+          },
+          "native_strength": {
+            "type": "string"
+          },
+          "native_weakness": {
+            "type": "string"
+          },
+          "radius": {
+            "enum": [
+              "none",
+              "small",
+              "medium",
+              "large",
+              "elbow"
+            ]
+          },
+          "glow": {
+            "type": "boolean"
+          },
+          "tokens": {
+            "type": "object",
+            "required": [
+              "void",
+              "panel",
+              "panel_raised",
+              "text",
+              "text_secondary",
+              "text_muted",
+              "accent",
+              "accent_2",
+              "nominal",
+              "caution",
+              "critical",
+              "offline",
+              "border"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "void": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "panel": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "panel_raised": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "text_secondary": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "text_muted": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "accent": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "accent_2": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "nominal": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "caution": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "critical": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "offline": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "border": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              }
+            }
+          },
+          "swatches": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            }
+          },
+          "motion": {
+            "type": "object",
+            "required": [
+              "boot_ms",
+              "arrival_ms",
+              "ease"
+            ],
+            "properties": {
+              "boot_ms": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1200
+              },
+              "arrival_ms": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 400
+              },
+              "ease": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "overlays": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description"
+        ]
+      }
+    }
+  }
+}

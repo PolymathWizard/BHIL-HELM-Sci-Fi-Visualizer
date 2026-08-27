@@ -1,0 +1,41 @@
+/* HELM token set: Tactical HUD (L02). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "tactical-hud";
+  /* background layers */
+  --bg-void: #07090C;
+  --bg-panel: #0E1319;
+  --bg-panel-raised: #151C25;
+  /* text */
+  --text-primary: #F6EFDF;
+  --text-secondary: #C8B98F;
+  --text-muted: #7D7460;
+  /* accent */
+  --accent-primary: #F2B441;
+  --accent-secondary: #4FD6E8;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #4FD6E8;
+  --state-caution: #F2B441;
+  --state-critical: #F0553D;
+  --state-offline: #4A4F58;
+  /* structure */
+  --border: #2A3340;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 4px;
+  --glow: 0 0 18px color-mix(in srgb, #F2B441 55%, transparent);
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Saira Condensed", system-ui, sans-serif;
+  --font-body: "Saira", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1200ms;
+  --motion-arrival: 300ms;
+  --motion-ease: cubic-bezier(.2,.8,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

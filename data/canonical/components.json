@@ -1,0 +1,32 @@
+{
+  "$schema": "../schemas/components.schema.json",
+  "framework": "HELM",
+  "version": "1.0.0",
+  "count_law": 14,
+  "note": "SP-5 component contract. Every component declares its required data shape, props, states, and whether it is decorative-only.",
+  "zones": [
+    {"id": "prime", "name": "Prime", "purpose": "The headline number or state", "density_wall": 1, "density_laptop": 1, "density_workbench": 2},
+    {"id": "support", "name": "Support", "purpose": "Three to five secondary metrics", "density_wall": 3, "density_laptop": 5, "density_workbench": 8},
+    {"id": "context", "name": "Context", "purpose": "Trend, comparison", "density_wall": 1, "density_laptop": 3, "density_workbench": 6},
+    {"id": "stream", "name": "Stream", "purpose": "Live log, ticker, ambient", "density_wall": 0, "density_laptop": 1, "density_workbench": 2},
+    {"id": "control", "name": "Control", "purpose": "Filters, time range", "density_wall": 0, "density_laptop": 3, "density_workbench": 6},
+    {"id": "status_rail", "name": "Status Rail", "purpose": "System health", "density_wall": 5, "density_laptop": 8, "density_workbench": 12}
+  ],
+  "alert_states": ["nominal", "caution", "critical", "offline"],
+  "components": [
+    {"id": "C01", "name": "Frame Panel", "purpose": "Zone boundary carrying the language hierarchy device", "data_shape": "none", "props": ["zone", "title", "priority"], "states": ["default", "focused"], "decorative_only": false},
+    {"id": "C02", "name": "Headline Metric", "purpose": "One number, one label, one evidence class", "data_shape": "scalar", "props": ["value", "label", "unit", "evidence", "delta"], "states": ["nominal", "caution", "critical", "offline"], "decorative_only": false},
+    {"id": "C03", "name": "Ring Gauge", "purpose": "Progress or utilization against a bound", "data_shape": "scalar-with-bound", "props": ["value", "max", "label", "evidence"], "states": ["nominal", "caution", "critical"], "decorative_only": false},
+    {"id": "C04", "name": "Bar / Segmented Bar", "purpose": "Categorical comparison", "data_shape": "categorical", "props": ["series", "labels", "evidence"], "states": ["default", "hover"], "decorative_only": false},
+    {"id": "C05", "name": "Sparkline", "purpose": "Compact trend beside a metric", "data_shape": "time-series", "props": ["values", "window"], "states": ["default"], "decorative_only": false},
+    {"id": "C06", "name": "Trend Chart", "purpose": "Full time-series with axes", "data_shape": "time-series", "props": ["series", "x", "y", "evidence"], "states": ["default", "hover", "range-selected"], "decorative_only": false},
+    {"id": "C07", "name": "Status Pill", "purpose": "One system, one state, readable without color", "data_shape": "enum", "props": ["label", "state", "shape"], "states": ["nominal", "caution", "critical", "offline"], "decorative_only": false},
+    {"id": "C08", "name": "Data Grid", "purpose": "Tabular detail with keyboard navigation", "data_shape": "table", "props": ["columns", "rows", "sort"], "states": ["default", "row-focused", "sorted"], "decorative_only": false},
+    {"id": "C09", "name": "Log Stream", "purpose": "Chronological events; real events only", "data_shape": "event-list", "props": ["events", "max_visible"], "states": ["live", "paused"], "decorative_only": false},
+    {"id": "C10", "name": "Radar / Polar Plot", "purpose": "Multi-axis profile comparison", "data_shape": "multi-axis", "props": ["axes", "series"], "states": ["default", "hover"], "decorative_only": false},
+    {"id": "C11", "name": "Map Tile", "purpose": "Geospatial placement", "data_shape": "geospatial", "props": ["points", "bounds"], "states": ["default", "hover"], "decorative_only": false},
+    {"id": "C12", "name": "Filter Rail", "purpose": "Time range and segment controls", "data_shape": "none", "props": ["ranges", "segments"], "states": ["default", "active"], "decorative_only": false},
+    {"id": "C13", "name": "Alert Banner", "purpose": "Critical state announcement with shape and label", "data_shape": "enum", "props": ["message", "state"], "states": ["hidden", "caution", "critical"], "decorative_only": false},
+    {"id": "C14", "name": "Ambient Ticker", "purpose": "Atmosphere only; must carry data-decorative", "data_shape": "none", "props": ["text"], "states": ["scrolling", "paused"], "decorative_only": true}
+  ]
+}

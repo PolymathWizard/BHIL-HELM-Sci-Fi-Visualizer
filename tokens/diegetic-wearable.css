@@ -1,0 +1,41 @@
+/* HELM token set: Diegetic Wearable (L14). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "diegetic-wearable";
+  /* background layers */
+  --bg-void: #060A0C;
+  --bg-panel: #0C1418;
+  --bg-panel-raised: #122026;
+  /* text */
+  --text-primary: #DDF8FF;
+  --text-secondary: #8FD0DE;
+  --text-muted: #4E7C88;
+  /* accent */
+  --accent-primary: #5CE1FF;
+  --accent-secondary: #C7F5FF;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #5CE1FF;
+  --state-caution: #FFD15C;
+  --state-critical: #FF5C7A;
+  --state-offline: #2F4148;
+  /* structure */
+  --border: #1E3A44;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 4px;
+  --glow: 0 0 18px color-mix(in srgb, #5CE1FF 55%, transparent);
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Titillium Web", system-ui, sans-serif;
+  --font-body: "Titillium Web", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 600ms;
+  --motion-arrival: 250ms;
+  --motion-ease: cubic-bezier(.2,.8,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

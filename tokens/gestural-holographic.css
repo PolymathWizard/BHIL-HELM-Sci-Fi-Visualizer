@@ -1,0 +1,41 @@
+/* HELM token set: Gestural Holographic (L05). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "gestural-holographic";
+  /* background layers */
+  --bg-void: #070B14;
+  --bg-panel: #0F1729;
+  --bg-panel-raised: #172238;
+  /* text */
+  --text-primary: #E9F2FF;
+  --text-secondary: #A7BCE0;
+  --text-muted: #6478A0;
+  /* accent */
+  --accent-primary: #8FD3FF;
+  --accent-secondary: #FFB45C;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #8FD3FF;
+  --state-caution: #FFB45C;
+  --state-critical: #FF6B6B;
+  --state-offline: #3E4A63;
+  /* structure */
+  --border: #2A3A5C;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 10px;
+  --glow: 0 0 18px color-mix(in srgb, #8FD3FF 55%, transparent);
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Exo 2", system-ui, sans-serif;
+  --font-body: "Exo 2", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 900ms;
+  --motion-arrival: 350ms;
+  --motion-ease: cubic-bezier(.34,1.56,.64,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

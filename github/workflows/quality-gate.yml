@@ -1,0 +1,31 @@
+name: quality-gate
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install docs and test deps
+        run: pip install -r requirements.txt
+      - name: Validate canonical data (schemas, count laws, cross-refs, contrast floors)
+        run: python3 tools/validate.py
+      - name: Drift gate (tokens and derived docs match canonical)
+        run: python3 tools/check_drift.py
+      - name: Prompt sync is current
+        run: python3 tools/sync_prompts.py && git diff --exit-code -- docs/prompts
+      - name: Em-dash sweep
+        run: python3 tools/em_dash_sweep.py
+      - name: Starter register validates
+        run: python3 tools/validate_register.py examples/helm-starter/data/register.json
+      - name: Launch collateral character check
+        run: python3 tools/verify_launch.py
+      - name: Tests
+        run: python3 -m pytest -q tests/
+      - name: Docs build strict
+        run: mkdocs build --strict

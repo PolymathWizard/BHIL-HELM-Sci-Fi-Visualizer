@@ -1,0 +1,41 @@
+/* HELM token set: Monochrome-Blueprint (L13). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "monochrome-blueprint";
+  /* background layers */
+  --bg-void: #111111;
+  --bg-panel: #1A1A1A;
+  --bg-panel-raised: #242424;
+  /* text */
+  --text-primary: #EDEDED;
+  --text-secondary: #B5B5B5;
+  --text-muted: #767676;
+  /* accent */
+  --accent-primary: #DADADA;
+  --accent-secondary: #9A9A9A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #DADADA;
+  --state-caution: #9A9A9A;
+  --state-critical: #FF4D4D;
+  --state-offline: #4A4A4A;
+  /* structure */
+  --border: #3A3A3A;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Archivo Narrow", system-ui, sans-serif;
+  --font-body: "Archivo", system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 300ms;
+  --motion-arrival: 150ms;
+  --motion-ease: linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

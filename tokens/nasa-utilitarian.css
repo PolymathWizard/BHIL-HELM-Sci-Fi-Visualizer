@@ -1,0 +1,41 @@
+/* HELM token set: NASA-Utilitarian (L07). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "nasa-utilitarian";
+  /* background layers */
+  --bg-void: #0A0C0A;
+  --bg-panel: #131612;
+  --bg-panel-raised: #1B1F19;
+  /* text */
+  --text-primary: #E6E9DF;
+  --text-secondary: #B3B9A6;
+  --text-muted: #737A69;
+  /* accent */
+  --accent-primary: #A9C97A;
+  --accent-secondary: #D9B458;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #A9C97A;
+  --state-caution: #D9B458;
+  --state-critical: #D96A5A;
+  --state-offline: #4F544B;
+  /* structure */
+  --border: #2C3129;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 400ms;
+  --motion-arrival: 200ms;
+  --motion-ease: linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

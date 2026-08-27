@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tropes.schema.json",
+  "title": "HELM Narrative Tax Register",
+  "type": "object",
+  "required": [
+    "framework",
+    "count_law",
+    "tropes"
+  ],
+  "properties": {
+    "framework": {
+      "const": "HELM"
+    },
+    "count_law": {
+      "const": 12
+    },
+    "tropes": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "trope",
+          "usability_cost",
+          "narrative_benefit",
+          "helm_default",
+          "rule"
+        ],
+        "properties": {
+          "id": {
+            "pattern": "^T(0[1-9]|1[0-2])$"
+          },
+          "helm_default": {
+            "enum": [
+              "keep",
+              "dial_back",
+              "remove"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

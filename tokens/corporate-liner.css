@@ -1,0 +1,41 @@
+/* HELM token set: Corporate-Liner (L10). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "corporate-liner";
+  /* background layers */
+  --bg-void: #1A1712;
+  --bg-panel: #FBF7EF;
+  --bg-panel-raised: #FFFFFF;
+  /* text */
+  --text-primary: #221C12;
+  --text-secondary: #5C5140;
+  --text-muted: #8E8371;
+  /* accent */
+  --accent-primary: #9E7320;
+  --accent-secondary: #2F5D8A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #2E7D4F;
+  --state-caution: #9E7320;
+  --state-critical: #B23A2E;
+  --state-offline: #9A948A;
+  /* structure */
+  --border: #E6DCC8;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 18px;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 800ms;
+  --motion-arrival: 400ms;
+  --motion-ease: cubic-bezier(.22,1,.36,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

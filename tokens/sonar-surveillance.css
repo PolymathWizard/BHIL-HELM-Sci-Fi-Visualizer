@@ -1,0 +1,41 @@
+/* HELM token set: Sonar-Surveillance (L08). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "sonar-surveillance";
+  /* background layers */
+  --bg-void: #020402;
+  --bg-panel: #061006;
+  --bg-panel-raised: #0B180B;
+  /* text */
+  --text-primary: #B8FFC4;
+  --text-secondary: #6FCF80;
+  --text-muted: #3A7A45;
+  /* accent */
+  --accent-primary: #6FFF8F;
+  --accent-secondary: #E8FFB0;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #6FFF8F;
+  --state-caution: #E8FFB0;
+  --state-critical: #FF8A80;
+  --state-offline: #334233;
+  /* structure */
+  --border: #1E4A26;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Share Tech Mono", system-ui, sans-serif;
+  --font-body: "Share Tech Mono", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1200ms;
+  --motion-arrival: 400ms;
+  --motion-ease: linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "components.schema.json",
+  "title": "HELM Component Contract",
+  "type": "object",
+  "required": [
+    "framework",
+    "count_law",
+    "zones",
+    "alert_states",
+    "components"
+  ],
+  "properties": {
+    "count_law": {
+      "const": 14
+    },
+    "zones": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "alert_states": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "nominal",
+          "caution",
+          "critical",
+          "offline"
+        ]
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "components": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "purpose",
+          "data_shape",
+          "props",
+          "states",
+          "decorative_only"
+        ],
+        "properties": {
+          "decorative_only": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

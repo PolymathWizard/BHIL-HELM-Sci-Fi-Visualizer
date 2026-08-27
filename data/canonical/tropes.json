@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/tropes.schema.json",
+  "framework": "HELM",
+  "version": "1.0.0",
+  "count_law": 12,
+  "note": "The Narrative Tax Register. Adapted from the usability-cost / narrative-benefit framing documented in the fictional-UI design literature. Applied in SP-3, re-checked in SP-8.",
+  "tropes": [
+    {"id": "T01", "trope": "Dedicated console / room", "usability_cost": "Forces the reader to a fixed location", "narrative_benefit": "Signals hierarchy and secrecy", "helm_default": "remove", "rule": "Responsive by default"},
+    {"id": "T02", "trope": "Transparent vertical screens", "usability_cost": "Background interference kills legibility", "narrative_benefit": "Shows the face through the screen", "helm_default": "dial_back", "rule": "Translucency at or below 15 percent over dark only"},
+    {"id": "T03", "trope": "Voice-first UI", "usability_cost": "Slower than direct manipulation; excludes some users", "narrative_benefit": "Lets people talk to the machine", "helm_default": "dial_back", "rule": "Optional overlay; never the only path"},
+    {"id": "T04", "trope": "Anthropomorphic UI", "usability_cost": "Wasteful, can be uncanny", "narrative_benefit": "Makes the system a character", "helm_default": "remove", "rule": "Remove for business dashboards"},
+    {"id": "T05", "trope": "Hardware dependence", "usability_cost": "Fragile physical props", "narrative_benefit": "Actors need tangible things", "helm_default": "remove", "rule": "Not applicable to screen deliverables"},
+    {"id": "T06", "trope": "Binary inputs everywhere", "usability_cost": "Loses analog control", "narrative_benefit": "Cheap to build", "helm_default": "dial_back", "rule": "Keep sliders where ranges matter"},
+    {"id": "T07", "trope": "Slow screen redraws", "usability_cost": "Text crawling at 48 baud", "narrative_benefit": "Suspenseful reveal", "helm_default": "dial_back", "rule": "Boot sequence only, at most 1.2 s, skippable"},
+    {"id": "T08", "trope": "Hidden thought-control", "usability_cost": "Nothing to look at", "narrative_benefit": "None for a dashboard", "helm_default": "remove", "rule": "Show results, not the act"},
+    {"id": "T09", "trope": "Data density as decoration", "usability_cost": "Signal buried in noise", "narrative_benefit": "Reads as advanced in one second", "helm_default": "dial_back", "rule": "Ambient zones only, marked decorative"},
+    {"id": "T10", "trope": "Optical flares / glow", "usability_cost": "Contrast destruction", "narrative_benefit": "Spectacle", "helm_default": "dial_back", "rule": "Single glow token, never on text"},
+    {"id": "T11", "trope": "Nonsense reference numbers", "usability_cost": "Reader looks for meaning that is not there", "narrative_benefit": "Texture", "helm_default": "remove", "rule": "Every number is real or labeled synthetic"},
+    {"id": "T12", "trope": "Enhance magic", "usability_cost": "Sets false expectations of the system", "narrative_benefit": "Drama", "helm_default": "remove", "rule": "Show actual drill-down paths"}
+  ]
+}

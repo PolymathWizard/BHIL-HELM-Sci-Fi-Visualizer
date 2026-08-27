@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{CLIENT}}: HELM dashboard</title>
+<!--
+  HELM artifact for {{CLIENT}} (REF {{REF}}). Language: {{LANGUAGE_SLUG}} ({{LANGUAGE_ID}}).
+  Reader: {{READER}}, {{SETTING}}, {{SECONDS}} seconds.
+  Purpose: the screen exists so that {{READER}} can {{DECISION}} in {{SECONDS}} seconds.
+  Data: {{DATA_MODE}}. See data/register.json for evidence classes and assumptions.
+  Dependencies: Chart.js 4.4.1 from cdnjs (pinned). No browser storage. No external asset calls.
+  Original design language only. No franchise names, logos, glyph systems, or licensed fonts.
+-->
+<link rel="stylesheet" href="tokens/{{LANGUAGE_SLUG}}.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg-void); color: var(--text-primary); font-family: var(--font-body); }
+  body { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+  :focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+
+  /* ---------- masthead ---------- */
+  header { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-3) var(--space-6); border-bottom: var(--border-weight) solid var(--border); }
+  header h1 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; }
+  header .purpose { color: var(--text-secondary); font-size: .85rem; }
+  header .clock { margin-left: auto; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--accent-secondary); }
+  header .synthetic { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; padding: 2px 8px; border: 1px solid var(--state-caution); color: var(--state-caution); }
+
+  /* ---------- grid ---------- */
+  main { display: grid; gap: var(--space-4); padding: var(--space-4) var(--space-6);
+         grid-template-columns: repeat(12, 1fr); grid-template-rows: auto 1fr; }
+  .zone { background: var(--bg-panel); border: var(--border-weight) solid var(--border); border-radius: var(--radius); padding: var(--space-4); position: relative; min-width: 0; }
+  .zone::before { content: attr(data-zone-label); position: absolute; top: -.55rem; left: var(--space-3); padding: 0 var(--space-2); background: var(--bg-void);
+                  font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; color: var(--text-muted); text-transform: uppercase; }
+  #prime { grid-column: 1 / 5; grid-row: 1 / 3; display: grid; place-items: center; align-self: stretch; }
+  #support { grid-column: 5 / 13; align-self: start; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+  #context { grid-column: 5 / 10; }
+  #rail { grid-column: 10 / 13; }
+  @media (max-width: 1100px) {
+    #prime { grid-column: 1 / 13; grid-row: auto; }
+    #support { grid-column: 1 / 13; grid-template-columns: repeat(2, 1fr); }
+    #context, #rail { grid-column: 1 / 13; }
+  }
+
+  /* ---------- Prime: ring gauge + reticle ---------- */
+  .gauge { position: relative; width: min(100%, 60vh, 440px); aspect-ratio: 1; }
+  .gauge svg { width: 100%; height: 100%; overflow: visible; }
+  .gauge .track { fill: none; stroke: var(--bg-panel-raised); stroke-width: 14; }
+  .gauge .arc { fill: none; stroke: var(--accent-primary); stroke-width: 14; stroke-linecap: butt; transition: stroke-dashoffset var(--motion-arrival) var(--motion-ease), stroke 0ms; }
+  .gauge .ring { fill: none; stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 6; animation: spin 40s linear infinite; transform-origin: 50% 50%; }
+  .gauge .tick { stroke: var(--text-muted); stroke-width: 1; }
+  .gauge .target { stroke: var(--state-caution); stroke-width: 2; }
+  .gauge .readout { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+  .gauge .value { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 5.5rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+  .gauge .label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .16em; color: var(--text-secondary); text-transform: uppercase; margin-top: var(--space-2); }
+  .gauge .delta { font-family: var(--font-mono); font-size: .9rem; margin-top: var(--space-2); }
+  .state-nominal .arc { stroke: var(--state-nominal); }
+  .state-caution .arc { stroke: var(--state-caution); }
+  .state-critical .arc { stroke: var(--state-critical); box-shadow: var(--glow); }
+  .state-critical .value { color: var(--state-critical); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- evidence badge ---------- */
+  .evidence { display: inline-block; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; padding: 1px 6px; border: 1px solid var(--text-muted); color: var(--text-secondary); vertical-align: middle; }
+  .evidence[data-tier="STATED"], .evidence[data-tier="INFERENCE"], .evidence[data-tier="UNCORROBORATED"] { border-color: var(--state-caution); color: var(--state-caution); }
+
+  /* ---------- Support metrics ---------- */
+  .metric { padding: var(--space-3); background: var(--bg-panel-raised); border-left: var(--border-weight-strong) solid var(--accent-secondary); border-radius: var(--radius); min-width: 0; }
+  .metric[data-state="caution"] { border-left-color: var(--state-caution); }
+  .metric[data-state="critical"] { border-left-color: var(--state-critical); }
+  .metric .m-label { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-secondary); display: flex; justify-content: space-between; gap: var(--space-2); }
+  .metric .m-value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; margin-top: var(--space-1); }
+  .metric .m-value small { font-size: .9rem; color: var(--text-muted); margin-left: 2px; }
+  .metric .spark { display: block; width: 100%; height: 28px; margin-top: var(--space-2); }
+  .metric .spark polyline { fill: none; stroke: var(--accent-secondary); stroke-width: 1.5; }
+  .metric .m-hover { font-family: var(--font-mono); font-size: .66rem; color: var(--text-muted); margin-top: var(--space-1); min-height: 1em; }
+
+  /* ---------- Context chart ---------- */
+  #context canvas { width: 100% !important; max-height: 220px; }
+  .ctx-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2); }
+  .ctx-head h2 { margin: 0; font-family: var(--font-display); font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
+  .range { display: flex; gap: var(--space-1); }
+  .range button { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 3px 8px; cursor: pointer; border-radius: var(--radius); }
+  .range button[aria-pressed="true"] { border-color: var(--accent-primary); color: var(--accent-primary); }
+
+  /* ---------- Status rail ---------- */
+  .rail-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .pill { display: grid; grid-template-columns: 1.1rem 1fr auto; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: .8rem; padding: var(--space-2); background: var(--bg-panel-raised); border-radius: var(--radius); }
+  .pill .shape { width: .9rem; height: .9rem; display: inline-block; }
+  .pill[data-state="nominal"] .shape { background: var(--state-nominal); border-radius: 50%; }
+  .pill[data-state="caution"] .shape { width: 0; height: 0; border-left: .5rem solid transparent; border-right: .5rem solid transparent; border-bottom: .9rem solid var(--state-caution); }
+  .pill[data-state="critical"] .shape { background: var(--state-critical); transform: rotate(45deg); }
+  .pill[data-state="offline"] .shape { border: 2px solid var(--state-offline); background: transparent; }
+  .pill .st { color: var(--text-secondary); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; }
+
+  /* ---------- Stream (ambient, decorative) ---------- */
+  footer { border-top: var(--border-weight) solid var(--border); overflow: hidden; padding: var(--space-2) 0; }
+  .ticker { display: flex; gap: var(--space-8); white-space: nowrap; font-family: var(--font-mono); font-size: .7rem; color: var(--text-muted); animation: scroll 60s linear infinite; }
+  .ticker::before { content: "AMBIENT"; letter-spacing: .2em; color: var(--text-muted); padding-left: var(--space-6); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- boot ---------- */
+  #boot { position: fixed; inset: 0; background: var(--bg-void); display: grid; place-items: center; z-index: 10; font-family: var(--font-mono); letter-spacing: .3em; color: var(--accent-primary); transition: opacity 300ms; }
+  #boot button { margin-top: var(--space-4); background: transparent; color: var(--text-secondary); border: 1px solid var(--border); font-family: var(--font-mono); padding: 4px 12px; cursor: pointer; }
+  #boot.done { opacity: 0; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) {
+    #boot { display: none; }
+    .ticker { animation: none; }
+    .gauge .ring { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div id="boot" role="status"><div>HELM · INITIALIZING SURFACE<br><button type="button" id="skip">skip</button></div></div>
+
+<header>
+  <h1>{{CLIENT}}</h1>
+  <span class="purpose">{{DECISION_QUESTION}}</span>
+  {{SYNTHETIC_BADGE}}
+  <span class="clock" id="clock" aria-live="off"></span>
+</header>
+
+<main>
+  <section id="prime" class="zone" data-zone-label="Prime" aria-labelledby="prime-label">
+    <div class="gauge" id="gauge">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle class="ring" cx="100" cy="100" r="96"></circle>
+        <circle class="track" cx="100" cy="100" r="80"></circle>
+        <circle class="arc" id="arc" cx="100" cy="100" r="80" transform="rotate(-90 100 100)"></circle>
+        <line class="target" id="target" x1="100" y1="12" x2="100" y2="28"></line>
+      </svg>
+      <div class="readout">
+        <div>
+          <div class="value" id="prime-value" data-field="on_time_rate" data-evidence="VERIFIED">--</div>
+          <div class="label" id="prime-label">On-time rate · today</div>
+          <div class="delta"><span id="prime-delta"></span> <span class="evidence" id="prime-evidence" data-tier="VERIFIED">VERIFIED</span></div>
+          <div class="delta" style="color:var(--text-muted)">target <span id="prime-target" data-field="on_time_target" data-evidence="STATED">--</span> <span class="evidence" data-tier="STATED">STATED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" class="zone" data-zone-label="Support" aria-label="Support metrics"></section>
+
+  <section id="context" class="zone" data-zone-label="Context">
+    <div class="ctx-head">
+      <h2>On-time rate, trailing window</h2>
+      <div class="range" role="group" aria-label="Time range">
+        <button type="button" data-range="7" aria-pressed="false">7d</button>
+        <button type="button" data-range="14" aria-pressed="true">14d</button>
+        <button type="button" data-range="30" aria-pressed="false">30d</button>
+      </div>
+    </div>
+    <canvas id="trend" data-field="on_time_rate_daily" data-evidence="VERIFIED" role="img" aria-label="Line chart of daily on-time rate"></canvas>
+  </section>
+
+  <section id="rail" class="zone" data-zone-label="Status rail">
+    <ul class="rail-list" id="rail-list" aria-label="Hub status"></ul>
+  </section>
+</main>
+
+<footer data-decorative="true" aria-hidden="true">
+  <div class="ticker" id="ticker"></div>
+</footer>
+
+<script>
+/* ================= DATA =================
+   Source: data/register.json and data/source.json. Evidence classes are carried per field.
+   If DATA_MODE is SYNTHETIC every row is generated and the header badge must render. */
+const HELM_DATA = {{HELM_DATA_JSON}};
+const THRESHOLDS = {{THRESHOLDS_JSON}};   // INFERENCE unless the register says otherwise
+
+/* ================= STATE ================= */
+let state = { range: 14, data: HELM_DATA };
+let trendChart = null;
+
+function tierOf(field) {
+  const el = document.querySelector(`[data-field="${field}"]`);
+  return el ? el.dataset.evidence : "UNCORROBORATED";
+}
+function stateFor(v, t) { return v < t.critical ? "critical" : v < t.caution ? "caution" : "nominal"; }
+function fmtPct(v) { return (v * 100).toFixed(1) + "%"; }
+
+/* ================= RENDER ================= */
+function renderState(s) {
+  const d = s.data;
+  // Prime
+  const st = stateFor(d.on_time_rate, THRESHOLDS.on_time_rate);
+  const g = document.getElementById("gauge");
+  g.className = "gauge state-" + st;
+  const C = 2 * Math.PI * 80;
+  const arc = document.getElementById("arc");
+  arc.setAttribute("stroke-dasharray", C);
+  arc.setAttribute("stroke-dashoffset", C * (1 - d.on_time_rate));
+  const tgtAngle = d.on_time_target * 360;
+  document.getElementById("target").setAttribute("transform", `rotate(${tgtAngle} 100 100)`);
+  document.getElementById("prime-value").textContent = fmtPct(d.on_time_rate);
+  document.getElementById("prime-target").textContent = fmtPct(d.on_time_target);
+  const gap = d.on_time_rate - d.on_time_target;
+  document.getElementById("prime-delta").textContent = (gap >= 0 ? "+" : "") + (gap * 100).toFixed(1) + " pts vs target";
+  document.getElementById("prime").setAttribute("aria-label", `On-time rate ${fmtPct(d.on_time_rate)}, state ${st}`);
+
+  // Support
+  const sup = document.getElementById("support");
+  sup.innerHTML = d.support.map(m => {
+    const pts = m.spark, min = Math.min(...pts), max = Math.max(...pts) || 1;
+    const poly = pts.map((v, i) => `${(i / (pts.length - 1)) * 100},${28 - ((v - min) / (max - min || 1)) * 24 - 2}`).join(" ");
+    const val = m.unit === "%" ? (m.value * 100).toFixed(0) : m.value.toLocaleString();
+    const unit = m.unit ? `<small>${m.unit}</small>` : "";
+    return `<article class="metric" data-state="${m.state}" data-field="${m.field}" data-evidence="${m.evidence}" tabindex="0" aria-label="${m.label} ${val}${m.unit} ${m.state}">
+      <div class="m-label"><span>${m.label}</span><span class="evidence" data-tier="${m.evidence}">${m.evidence}</span></div>
+      <div class="m-value">${val}${unit}</div>
+      <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true"><polyline points="${poly}"/></svg>
+      <div class="m-hover" data-hover="${m.hover}"></div>
+    </article>`;
+  }).join("");
+
+  // Context
+  const series = d.on_time_rate_daily.slice(-s.range);
+  const labels = series.map((_, i) => `D-${series.length - 1 - i}`);
+  const css = getComputedStyle(document.documentElement);
+  const cfg = {
+    type: "line",
+    data: { labels, datasets: [
+      { label: "On-time rate", data: series.map(v => v * 100), borderColor: css.getPropertyValue("--accent-secondary").trim(), borderWidth: 2, pointRadius: 0, tension: .25 },
+      { label: "Target (STATED)", data: series.map(() => d.on_time_target * 100), borderColor: css.getPropertyValue("--state-caution").trim(), borderWidth: 1, borderDash: [4, 4], pointRadius: 0 }
+    ]},
+    options: { animation: { duration: parseInt(css.getPropertyValue("--motion-arrival")) || 0 }, responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: css.getPropertyValue("--text-secondary").trim(), font: { family: css.getPropertyValue("--font-mono") } } } },
+      scales: { x: { ticks: { color: css.getPropertyValue("--text-muted").trim() }, grid: { color: css.getPropertyValue("--border").trim() } },
+                y: { min: 80, max: 100, ticks: { color: css.getPropertyValue("--text-muted").trim(), callback: v => v + "%" }, grid: { color: css.getPropertyValue("--border").trim() } } } }
+  };
+  if (typeof Chart === "undefined") { renderTrendFallback(series, d.on_time_target); }
+  else if (trendChart) { trendChart.data = cfg.data; trendChart.update(); }
+  else { trendChart = new Chart(document.getElementById("trend"), cfg); }
+  document.querySelectorAll(".range button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.range === s.range)));
+
+  // Status rail
+  document.getElementById("rail-list").innerHTML = d.hubs.map(h =>
+    `<li class="pill" data-state="${h.state}" data-field="hub_state" data-evidence="VERIFIED"><span class="shape" aria-hidden="true"></span><span>${h.id} · ${h.name}</span><span class="st">${h.state}</span></li>`).join("");
+
+  // Stream (decorative only; text is atmosphere, not signal)
+  const t = document.getElementById("ticker");
+  t.innerHTML = [...d.ambient, ...d.ambient].map(x => `<span>${x}</span>`).join("");
+
+  // Clock
+  document.getElementById("clock").textContent = new Date(d.as_of).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) + " local";
+}
+
+/* Fallback when the CDN is unreachable: inline SVG line, same data, same bindings. Logged, never silent. */
+function renderTrendFallback(series, target) {
+  const host = document.getElementById("context");
+  let svg = host.querySelector("svg.fallback");
+  if (!svg) {
+    host.querySelector("canvas").style.display = "none";
+    host.insertAdjacentHTML("beforeend", '<svg class="fallback" viewBox="0 0 600 200" preserveAspectRatio="none" role="img" aria-label="Line chart of daily on-time rate (offline fallback)" data-field="on_time_rate_daily" data-evidence="VERIFIED" style="width:100%;height:200px"></svg><p class="m-hover">Chart library unavailable; showing inline fallback.</p>');
+    svg = host.querySelector("svg.fallback");
+    console.warn("HELM: Chart.js unavailable, rendering inline SVG fallback");
+  }
+  const y = v => 200 - ((v * 100 - 80) / 20) * 190 - 5;
+  const pts = series.map((v, i) => `${(i / (series.length - 1)) * 600},${y(v)}`).join(" ");
+  svg.innerHTML = `<line x1="0" x2="600" y1="${y(target)}" y2="${y(target)}" stroke="var(--state-caution)" stroke-dasharray="4 4"/>
+    <polyline points="${pts}" fill="none" stroke="var(--accent-secondary)" stroke-width="2"/>`;
+}
+
+/* ================= INTERACTION ================= */
+document.addEventListener("click", e => {
+  const b = e.target.closest(".range button");
+  if (b) { state.range = +b.dataset.range; renderState(state); }
+});
+document.addEventListener("focusin", e => { const m = e.target.closest(".metric"); if (m) m.querySelector(".m-hover").textContent = m.querySelector(".m-hover").dataset.hover; });
+document.addEventListener("focusout", e => { const m = e.target.closest(".metric"); if (m) m.querySelector(".m-hover").textContent = ""; });
+document.addEventListener("mouseover", e => { const m = e.target.closest(".metric"); if (m) m.querySelector(".m-hover").textContent = m.querySelector(".m-hover").dataset.hover; });
+document.addEventListener("mouseout", e => { const m = e.target.closest(".metric"); if (m && !m.contains(document.activeElement)) m.querySelector(".m-hover").textContent = ""; });
+document.addEventListener("keydown", e => { if (e.key === "Escape") document.activeElement && document.activeElement.blur(); });
+
+/* ================= BOOT ================= */
+const boot = document.getElementById("boot");
+const bootMs = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--motion-boot")) || 0;
+function endBoot() { boot.classList.add("done"); }
+document.getElementById("skip").addEventListener("click", endBoot);
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) endBoot(); else setTimeout(endBoot, Math.min(bootMs, 1200));
+
+renderState(state);
+</script>
+</body>
+</html>

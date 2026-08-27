@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "matching.schema.json",
+  "title": "HELM Matching Logic",
+  "type": "object",
+  "required": [
+    "framework",
+    "count_law",
+    "rules"
+  ],
+  "properties": {
+    "count_law": {
+      "const": 11
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "data_shape",
+          "reader_hint",
+          "first_fit",
+          "alternate",
+          "why"
+        ],
+        "properties": {
+          "first_fit": {
+            "type": "string"
+          },
+          "alternate": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

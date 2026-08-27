@@ -1,0 +1,137 @@
+{
+  "as_of": "2026-08-27T11:40:00-07:00",
+  "on_time_rate": 0.912,
+  "on_time_target": 0.95,
+  "on_time_rate_daily": [
+    0.94,
+    0.93,
+    0.95,
+    0.92,
+    0.9,
+    0.89,
+    0.91,
+    0.93,
+    0.94,
+    0.92,
+    0.9,
+    0.88,
+    0.9,
+    0.912,
+    0.95,
+    0.96,
+    0.95,
+    0.94,
+    0.93,
+    0.94,
+    0.95,
+    0.93,
+    0.92,
+    0.94,
+    0.95,
+    0.94,
+    0.93,
+    0.92,
+    0.91,
+    0.9
+  ],
+  "support": [
+    {
+      "field": "orders_in_flight",
+      "label": "In flight",
+      "value": 4182,
+      "unit": "",
+      "evidence": "VERIFIED",
+      "state": "nominal",
+      "spark": [
+        3900,
+        4010,
+        4100,
+        4050,
+        4182
+      ],
+      "hover": "since 06:00"
+    },
+    {
+      "field": "carrier_capacity",
+      "label": "Carrier capacity",
+      "value": 0.84,
+      "unit": "%",
+      "evidence": "VERIFIED",
+      "state": "caution",
+      "spark": [
+        0.95,
+        0.92,
+        0.9,
+        0.87,
+        0.84
+      ],
+      "hover": "booked / available"
+    },
+    {
+      "field": "avg_dock_wait",
+      "label": "Dock wait",
+      "value": 23,
+      "unit": "min",
+      "evidence": "INFERENCE",
+      "state": "caution",
+      "spark": [
+        14,
+        16,
+        18,
+        21,
+        23
+      ],
+      "hover": "derived from gate scans"
+    },
+    {
+      "field": "exceptions_open",
+      "label": "Exceptions",
+      "value": 37,
+      "unit": "",
+      "evidence": "VERIFIED",
+      "state": "critical",
+      "spark": [
+        12,
+        15,
+        20,
+        29,
+        37
+      ],
+      "hover": "unresolved > 2h"
+    }
+  ],
+  "hubs": [
+    {
+      "id": "SEA-1",
+      "name": "Everett",
+      "state": "nominal"
+    },
+    {
+      "id": "PDX-2",
+      "name": "Troutdale",
+      "state": "caution"
+    },
+    {
+      "id": "BOI-1",
+      "name": "Boise",
+      "state": "nominal"
+    },
+    {
+      "id": "SPK-1",
+      "name": "Spokane",
+      "state": "critical"
+    },
+    {
+      "id": "GEG-3",
+      "name": "Airway Hts",
+      "state": "offline"
+    }
+  ],
+  "ambient": [
+    "scan cadence nominal",
+    "route optimizer idle",
+    "weather feed synced",
+    "carrier api latency 212ms",
+    "gate 7 calibration due"
+  ]
+}

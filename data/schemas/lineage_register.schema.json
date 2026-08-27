@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lineage_register.schema.json",
+  "title": "HELM Lineage Register",
+  "type": "object",
+  "required": [
+    "framework",
+    "entries",
+    "design_houses",
+    "reference_set"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "work",
+          "year",
+          "interface",
+          "taxonomy",
+          "credited",
+          "maps_to",
+          "grammar_studied",
+          "usability_note",
+          "attribution_evidence",
+          "typeface_evidence"
+        ],
+        "properties": {
+          "attribution_evidence": {
+            "enum": [
+              "VERIFIED",
+              "CORROBORATED",
+              "UNCORROBORATED",
+              "INFERENCE",
+              "STATED"
+            ]
+          },
+          "typeface_evidence": {
+            "const": "UNCORROBORATED"
+          },
+          "taxonomy": {
+            "enum": [
+              "command-control",
+              "hud-ar",
+              "investigation",
+              "public-access"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

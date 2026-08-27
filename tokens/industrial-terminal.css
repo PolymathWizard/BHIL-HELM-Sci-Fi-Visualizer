@@ -1,0 +1,41 @@
+/* HELM token set: Industrial Terminal (L03). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "industrial-terminal";
+  /* background layers */
+  --bg-void: #000000;
+  --bg-panel: #050805;
+  --bg-panel-raised: #0A120A;
+  /* text */
+  --text-primary: #9CFF8A;
+  --text-secondary: #5FBF52;
+  --text-muted: #2F6B2A;
+  /* accent */
+  --accent-primary: #9CFF8A;
+  --accent-secondary: #FFC35A;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #9CFF8A;
+  --state-caution: #FFC35A;
+  --state-critical: #FF5C5C;
+  --state-offline: #3A3A3A;
+  /* structure */
+  --border: #1F4D1B;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "VT323", system-ui, sans-serif;
+  --font-body: "IBM Plex Mono", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1200ms;
+  --motion-arrival: 0ms;
+  --motion-ease: steps(1, end);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

@@ -1,0 +1,17 @@
+# {{CLIENT}} Dashboard: HELM build
+
+Purpose: {{READER}} decides {{DECISION}} in {{SECONDS}} seconds, from {{SETTING}}.
+
+Data: `data/source.json` embedded as `HELM_DATA` in `dashboard.html`. Schema in `data/register.json`. Data mode: {{DATA_MODE}}. STATED fields: {{STATED_FIELDS}}. INFERENCE fields: {{INFERENCE_FIELDS}}.
+
+Style: `tokens/{{LANGUAGE_SLUG}}.css` (HELM {{LANGUAGE_ID}}). Original design language only. Never introduce franchise names, logos, glyph systems, or licensed or fan-recreation fonts.
+
+Components: {{COMPONENT_LIST}}
+
+Zones and density: {{DENSITY_TABLE}}
+
+Commands: `/rebind <file>` · `/restyle <language>` · `/add-panel <zone> <field>`
+
+QA: run contrast and fidelity checks before any commit (see `../../prompts/sp-08-accessibility-fidelity-qa.md`). Chart.js 4.4.1 pinned from cdnjs; an inline SVG fallback renders if the CDN is unreachable and logs a console warning.
+
+Run: open `dashboard.html` from `file://`. No build step.

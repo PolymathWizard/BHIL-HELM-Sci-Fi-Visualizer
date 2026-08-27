@@ -1,0 +1,41 @@
+/* HELM token set: Retro-Forward (L15). DERIVED from data/canonical/catalog.json. Do not hand edit. */
+
+:root {
+  --helm-language: "retro-forward";
+  /* background layers */
+  --bg-void: #0A0806;
+  --bg-panel: #0A0806;
+  --bg-panel-raised: #151109;
+  /* text */
+  --text-primary: #FFB347;
+  --text-secondary: #C98A38;
+  --text-muted: #7A5524;
+  /* accent */
+  --accent-primary: #FFB347;
+  --accent-secondary: #FFE0A0;
+  /* alert states: nominal / caution / critical / offline */
+  --state-nominal: #FFB347;
+  --state-caution: #FFE0A0;
+  --state-critical: #FF6A47;
+  --state-offline: #3A2E22;
+  /* structure */
+  --border: #5A3F1E;
+  --border-weight: 1px;
+  --border-weight-strong: 3px;
+  --radius: 0;
+  --glow: none;
+  /* type stack (open-license category faces; never screen originals) */
+  --font-display: "Press Start 2P", system-ui, sans-serif;
+  --font-body: "Space Mono", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  /* spacing scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  /* motion */
+  --motion-boot: 1200ms;
+  --motion-arrival: 0ms;
+  --motion-ease: steps(1, end);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-boot: 0ms; --motion-arrival: 0ms; }
+}

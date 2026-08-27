@@ -1,0 +1,7 @@
+- {name: catalog, color: 1B4FD8, description: Design language catalog}
+- {name: needs-lineage, color: 6B9EFF, description: Lineage evidence required}
+- {name: tokens, color: 0F2F8A, description: Token sets and contrast}
+- {name: qa, color: A82A2E, description: Accessibility, fidelity, IP checks}
+- {name: prompts, color: 1C1C2E, description: The ten-prompt system}
+- {name: claude-code, color: E8EEFF, description: Agents, commands, skills}
+- {name: docs, color: 6B9EFF, description: Documentation site}

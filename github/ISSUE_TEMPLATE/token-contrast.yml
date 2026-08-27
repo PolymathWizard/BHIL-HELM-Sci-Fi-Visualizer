@@ -1,0 +1,18 @@
+name: Token or contrast finding
+description: A token pair fails a floor, or a token reads wrong in practice
+labels: [tokens, qa]
+body:
+  - type: input
+    id: language
+    attributes: {label: Language slug}
+    validations: {required: true}
+  - type: input
+    id: pair
+    attributes: {label: Token pair, placeholder: "text_secondary on panel"}
+    validations: {required: true}
+  - type: input
+    id: ratio
+    attributes: {label: Measured ratio and floor}
+  - type: textarea
+    id: context
+    attributes: {label: Where it was observed}

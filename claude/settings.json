@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(python3 tools/*)",
+      "Bash(python3 -m pytest*)",
+      "Bash(mkdocs build*)",
+      "Write(engagements/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(git push*)"
+    ],
+    "ask": [
+      "Write(data/canonical/**)",
+      "Write(tokens/**)",
+      "Write(docs/catalog/**)",
+      "Write(docs/reference/**)"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+name: Language proposal
+description: Propose a new design language for the HELM catalog (changes the 15 count law)
+labels: [catalog, needs-lineage]
+body:
+  - type: input
+    id: name
+    attributes: {label: Proposed language name, placeholder: "e.g. Orbital-Cartographic"}
+    validations: {required: true}
+  - type: textarea
+    id: lineage
+    attributes: {label: Lineage (study only), description: Period and function, no franchise names in the field value. Attribution evidence class required.}
+    validations: {required: true}
+  - type: textarea
+    id: grammar
+    attributes: {label: Grammar, description: Palette logic, type stack category, hierarchy device, motion grammar, sound cue, native strength, native weakness}
+    validations: {required: true}
+  - type: dropdown
+    id: reach
+    attributes: {label: How is it reached, options: [New matching rule, Override list, Replaces an existing language]}
+    validations: {required: true}
+  - type: checkboxes
+    id: ip
+    attributes:
+      label: IP cleanliness
+      options:
+        - label: No franchise name, logo, glyph system, or licensed font in any proposed token or field
+          required: true
