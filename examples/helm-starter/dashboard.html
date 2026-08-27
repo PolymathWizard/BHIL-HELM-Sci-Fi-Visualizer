@@ -20,7 +20,7 @@
   :focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
 
   /* ---------- masthead ---------- */
-  header { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-3) var(--space-6); border-bottom: var(--border-weight) solid var(--border); }
+  header { background: var(--bg-panel); display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-3) var(--space-6); border-bottom: var(--border-weight) solid var(--border); }
   header h1 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; }
   header .purpose { color: var(--text-secondary); font-size: .85rem; }
   header .clock { margin-left: auto; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--accent-secondary); }
@@ -94,7 +94,7 @@
   .pill .st { color: var(--text-secondary); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; }
 
   /* ---------- Stream (ambient, decorative) ---------- */
-  footer { border-top: var(--border-weight) solid var(--border); overflow: hidden; padding: var(--space-2) 0; }
+  footer { background: var(--bg-panel); border-top: var(--border-weight) solid var(--border); overflow: hidden; padding: var(--space-2) 0; }
   .ticker { display: flex; gap: var(--space-8); white-space: nowrap; font-family: var(--font-mono); font-size: .7rem; color: var(--text-muted); animation: scroll 60s linear infinite; }
   .ticker::before { content: "AMBIENT"; letter-spacing: .2em; color: var(--text-muted); padding-left: var(--space-6); }
   @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
