@@ -4,8 +4,7 @@
 
 **Heuristic Engine for Layered Mockups.** Turn client data into eye-catching, functional, Claude Code friendly interactive dashboards styled in science-fiction design languages. Evidence-tiered. IP-clean. Regenerable.
 
-[![quality-gate](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml/badge.svg)](https://github.com/PolymathWizard/BHIL-HELM-Sci-Fi-Visualizer/actions/workflows/quality-gate.yml)
-[![docs](https://img.shields.io/badge/docs-GitHub%20Pages-1B4FD8)](https://polymathwizard.github.io/BHIL-HELM-Sci-Fi-Visualizer/)
+
 [![license](https://img.shields.io/badge/code-MIT-0F2F8A)](LICENSE) [![content](https://img.shields.io/badge/content-CC%20BY%204.0-6B9EFF)](LICENSE-CONTENT)
 
 Read [ABOUT.md](ABOUT.md) for the full story of the framework, or open the [visual reference pack](research/reference-pack/README.md) that the catalog was distilled from.
